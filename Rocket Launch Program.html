@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rocket Launch</title>
+
+<style>
+body {
+    text-align: center;
+    font-family: Arial;
+}
+
+#space {
+    height: 350px;
+    background: linear-gradient(skyblue, white);
+    margin: 30px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+#rocket {
+    font-size: 60px;
+    position: absolute;
+    bottom: 10px;
+    left: 45%;
+}
+
+.launch {
+    animation: fly 3s forwards;
+}
+
+@keyframes fly {
+    from {
+        bottom: 10px;
+    }
+    to {
+        bottom: 400px;
+    }
+}
+
+button {
+    padding: 12px 25px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Rocket Launch 🚀</h1>
+
+<div id="space">
+    <div id="rocket">🚀</div>
+</div>
+
+<button onclick="launch()">Launch Rocket</button>
+<button onclick="resetRocket()">Reset</button>
+
+<script>
+function launch() {
+    let rocket = document.getElementById("rocket");
+
+    rocket.classList.remove("launch");
+    void rocket.offsetWidth;
+    rocket.classList.add("launch");
+}
+
+function resetRocket() {
+    let rocket = document.getElementById("rocket");
+
+    rocket.classList.remove("launch");
+    rocket.style.bottom = "10px";
+}
+</script>
+
+</body>
+</html>
